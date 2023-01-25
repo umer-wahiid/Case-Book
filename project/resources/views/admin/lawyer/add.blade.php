@@ -2,28 +2,40 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Form Elements</h1>
+    <h1>Add New Lawyer</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Forms</li>
-            <li class="breadcrumb-item active">Elements</li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
+            <li class="breadcrumb-item">Lawyers</li>
+            <li class="breadcrumb-item active">Add Lawyer</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
 
 <section class="section">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-120 ">
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">General Form Elements</h5>
+                    <h5 class="card-title">Add Lawyer</h5>
 
                     <!-- General Form Elements -->
                     <form>
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Text</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">Lawyer ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Father Name</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control">
                             </div>
@@ -35,24 +47,30 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-2 col-form-label">Number</label>
+                            <label for="inputNumber" class="col-sm-2 col-form-label">Phone.</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+                            <label for="inputNumber" class="col-sm-2 col-form-label">Address</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" style="height: 100px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputNumber" class="col-sm-2 col-form-label">Profile Photo</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="file" id="formFile">
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Rank/Post</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <!-- <div class="row mb-3">
                             <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control">
@@ -77,8 +95,14 @@
                             <div class="col-sm-10">
                                 <textarea class="form-control" style="height: 100px"></textarea>
                             </div>
+                        </div> -->
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control">
+                            </div>
                         </div>
-                        <fieldset class="row mb-3">
+                        <!-- <fieldset class="row mb-3">
                             <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
@@ -154,10 +178,12 @@
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Submit Button</label>
+                            <!-- <label class="col-sm-2 col-form-label">Submit</label> -->
+                            <div class="col-sm-2">
+                            </div>
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary">Submit Form</button>
                             </div>

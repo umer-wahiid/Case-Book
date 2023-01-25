@@ -24,6 +24,7 @@ Route::group(['prefix'=>'admin'],function(){
     //Route::get('/',[adminController::class,'index']);
     
     Route::group(['prefix'=>'lawyers'],function(){
+        Route::get('index',[AuthController::class,'index']);
         Route::get('create',[AuthController::class,'create']);
         Route::post('store',[AuthController::class,'store']);
         Route::get('show',[AuthController::class,'show']);

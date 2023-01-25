@@ -21,8 +21,8 @@
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Remove</span>
+            <a href="{{url('admin/lawyers/index')}}">
+              <i class="bi bi-circle"></i><span>View</span>
             </a>
           </li>
         </ul>
