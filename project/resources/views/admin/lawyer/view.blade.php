@@ -1,16 +1,17 @@
 @extends('admin.master.main')
 @section('content')
+<main id="main" class="main">
 
-<div class="pagetitle">
-    <h1>View Lawyers</h1>
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
-            <li class="breadcrumb-item">Lawyers</li>
-            <li class="breadcrumb-item active">View Lawyers</li>
-        </ol>
-    </nav>
-</div><!-- End Page Title -->
+    <div class="pagetitle">
+        <h1>View Lawyers</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
+                <li class="breadcrumb-item">Lawyers</li>
+                <li class="breadcrumb-item active">View Lawyers</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
 
     <div class="row">
@@ -45,9 +46,11 @@
                             <td>dsfgf</td>
                             <td>dfsgf</td>
                             <td>dfgsdfg</td>
-                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px" height="40px" alt=""></td>
+                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                    height="40px" alt=""></td>
                             <td>
-                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px" height="40px" alt="">
+                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle"
+                                    width="40px" height="40px" alt="">
                             </td>
                             <td>
                                 <!-- <a href="#"><i class="fa fa-pen"
@@ -67,9 +70,11 @@
                             <td>dsfgf</td>
                             <td>dfsgf</td>
                             <td>dfgsdfg</td>
-                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px" height="40px" alt=""></td>
+                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                    height="40px" alt=""></td>
                             <td>
-                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px" height="40px" alt="">
+                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle"
+                                    width="40px" height="40px" alt="">
                             </td>
                             <td>
                                 <!-- <a href="#"><i class="fa fa-pen"
@@ -89,9 +94,11 @@
                             <td>dsfgf</td>
                             <td>dfsgf</td>
                             <td>dfgsdfg</td>
-                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px" height="40px" alt=""></td>
+                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                    height="40px" alt=""></td>
                             <td>
-                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px" height="40px" alt="">
+                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle"
+                                    width="40px" height="40px" alt="">
                             </td>
                             <td>
                                 <!-- <a href="#"><i class="fa fa-pen"
@@ -111,9 +118,11 @@
                             <td>dsfgf</td>
                             <td>dfsgf</td>
                             <td>dfgsdfg</td>
-                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px" height="40px" alt=""></td>
+                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                    height="40px" alt=""></td>
                             <td>
-                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px" height="40px" alt="">
+                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle"
+                                    width="40px" height="40px" alt="">
                             </td>
                             <td>
                                 <!-- <a href="#"><i class="fa fa-pen"
@@ -123,7 +132,8 @@
                                 <a href="#">Edit</a>
                                 <a href="#">Remove</a>
                             </td>
-                        </tr>                      <tr>
+                        </tr>
+                        <tr>
                             <td>13</td>
                             <td>gszdfg</td>
                             <td>sdfgsdfg</td>
@@ -132,9 +142,11 @@
                             <td>dsfgf</td>
                             <td>dfsgf</td>
                             <td>dfgsdfg</td>
-                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px" height="40px" alt=""></td>
+                            <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                    height="40px" alt=""></td>
                             <td>
-                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px" height="40px" alt="">
+                                <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle"
+                                    width="40px" height="40px" alt="">
                             </td>
                             <td>
                                 <!-- <a href="#"><i class="fa fa-pen"
@@ -152,6 +164,7 @@
 
         </div>
     </div>
+</main><!-- End #main -->
 
 
 @endsection

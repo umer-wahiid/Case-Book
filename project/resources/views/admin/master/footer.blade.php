@@ -1,4 +1,3 @@
-</main><!-- End #main -->
 
 
 <!-- ======= Footer ======= -->
@@ -35,7 +34,6 @@
 
 <!-- for Datatable -->
 <script src="{{asset('admin/assets/js/jquery.dataTables.js')}}"></script>
-<!-- <script src="{{asset('admin/assets/js/jquery.dataTables.min.js')}}"></script> -->
 <script src="{{asset('admin/assets/js/dataTables.bootstrap.min.js')}}"></script>
 
 <script>

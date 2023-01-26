@@ -174,5 +174,3 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
