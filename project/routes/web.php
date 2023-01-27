@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CaseregController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,17 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('reply/{id}',[AuthController::class,'reply']);
         Route::post('replymail/{id}',[AuthController::class,'replymail']);
         Route::get('destroy/{id}',[AuthController::class,'destroy']);
+    });
+
+
+    Route::group(['prefix'=>'cases'],function(){
+        Route::get('index',[CaseregController::class,'index']);
+        Route::get('create',[CaseregController::class,'create']);
+        Route::post('store',[CaseregController::class,'store']);
+        Route::get('show',[CaseregController::class,'show']);
+        Route::get('reply/{id}',[CaseregController::class,'reply']);
+        Route::post('replymail/{id}',[CaseregController::class,'replymail']);
+        Route::get('destroy/{id}',[CaseregController::class,'destroy']);
     });
     
 

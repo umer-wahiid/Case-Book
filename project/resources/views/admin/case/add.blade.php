@@ -2,13 +2,13 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Add New Lawyer</h1>
+    <h1>Add New Case</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
-            <li class="breadcrumb-item">Lawyers</li>
-            <li class="breadcrumb-item active">Add Lawyer</li>
-        </ol>
+            <li class="breadcrumb-item">Cases</li>
+            <li class="breadcrumb-item active">Add Case</li>
+        </ol> 
     </nav>
 </div><!-- End Page Title -->
 
@@ -18,7 +18,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Add Lawyer</h5>
+                    <h5 class="card-title">Add Case</h5>
 
                     <!-- General Form Elements -->
                     <form>

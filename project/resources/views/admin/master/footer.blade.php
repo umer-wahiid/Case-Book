@@ -1,9 +1,9 @@
-
+</main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
     <div class="copyright">
-        &copy; Copyright <strong><span>CaseBook</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Case Book</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -18,8 +18,6 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('admin/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendor/chart.js/chart.umd.js')}}"></script>
@@ -34,6 +32,7 @@
 
 <!-- for Datatable -->
 <script src="{{asset('admin/assets/js/jquery.dataTables.js')}}"></script>
+<!-- <script src="{{asset('admin/assets/js/jquery.dataTables.min.js')}}"></script> -->
 <script src="{{asset('admin/assets/js/dataTables.bootstrap.min.js')}}"></script>
 
 <script>
@@ -41,6 +40,7 @@ $(document).ready(function() {
     $("#mytable").DataTable();
 });
 </script>
+
 </body>
 
 </html>
