@@ -6,8 +6,8 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
-            <li class="breadcrumb-item">Lawyers</li>
-            <li class="breadcrumb-item active">View Lawyers</li>
+            <li class="breadcrumb-item">Cases</li>
+            <li class="breadcrumb-item active">View Cases</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -18,7 +18,7 @@
 
         <div class="container">
 
-            <h1>Cars List</h1>
+            <h1>Case List</h1>
             <table id="mytable" class="table">
                 <thead>
                     <tr>

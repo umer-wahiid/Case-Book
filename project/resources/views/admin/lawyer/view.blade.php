@@ -18,7 +18,7 @@
 
         <div class="container">
 
-            <h1>Cars List</h1>
+            <h1>Lawyers List</h1>
             <table id="mytable" class="table">
                 <thead>
                     <tr>
