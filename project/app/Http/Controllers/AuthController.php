@@ -15,6 +15,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function login()
+    {
+        return view ('admin.login');
+    }
     public function index()
     {
         return view ('admin.lawyer.view');
