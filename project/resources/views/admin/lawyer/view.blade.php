@@ -19,19 +19,18 @@
         <div class="container">
 
             <h1>Lawyers List</h1>
-            <table id="mytable" class="table">
+            <table class="table datatable">
                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>Car</th>
-                        <th>Category</th>
-                        <th>Brand</th>
-                        <th>Year</th>
-                        <th>Type</th>
-                        <th>Kilometer</th>
-                        <th>Stock</th>
+                        <th>Lawyer ID</th>
+                        <th>Name</th>
+                        <th>Father Name</th>
+                        <th>Email</th>
+                        <th>Phone.</th>
+                        <th>Address</th>
                         <th>Image</th>
-                        <th>More Images</th>
+                        <th>Stock</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -44,13 +43,9 @@
                         <td>gfdfg</td>
                         <td>dsfgf</td>
                         <td>dfsgf</td>
-                        <td>dfgsdfg</td>
                         <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                                height="40px" alt=""></td>
-                        <td>
-                            <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px"
-                                height="40px" alt="">
-                        </td>
+                        height="40px" alt=""></td>
+                        <td>dfgsdfg</td>
                         <td>
                             <!-- <a href="#"><i class="fa fa-pen"
                                         style="font-size: 18px; padding:5px;"></i></a>

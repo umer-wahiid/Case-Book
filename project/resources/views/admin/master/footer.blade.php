@@ -31,13 +31,13 @@
 <script src="{{asset('admin/assets/js/main.js')}}"></script>
 
 <!-- for Datatable -->
-<script src="{{asset('admin/assets/datatable/jquery.dataTables.js')}}"></script>
+<!-- <script src="{{asset('admin/assets/datatable/jquery.dataTables.js')}}"></script>
 <script src="{{asset('admin/assets/datatable/dataTables.bootstrap.min.js')}}"></script>
 <script>
 $(document).ready(function() {
     $("#mytable").DataTable();
 });
-</script>
+</script> -->
 
 
 <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>

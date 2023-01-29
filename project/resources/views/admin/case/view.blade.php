@@ -19,7 +19,7 @@
         <div class="container">
 
             <h1>Case List</h1>
-            <table id="mytable" class="table">
+            <table id="mytable" class="table datatable">
                 <thead>
                     <tr>
                         <th>S.No</th>
@@ -134,6 +134,78 @@
                     </tr>
                     <tr>
                         <td>13</td>
+                        <td>gszdfg</td>
+                        <td>sdfgsdfg</td>
+                        <td>dfgs</td>
+                        <td>gfdfg</td>
+                        <td>dsfgf</td>
+                        <td>dfsgf</td>
+                        <td>dfgsdfg</td>
+                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                height="40px" alt=""></td>
+                        <td>
+                            <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px"
+                                height="40px" alt="">
+                        </td>
+                        <td>
+                            <!-- <a href="#"><i class="fa fa-pen"
+                                        style="font-size: 18px; padding:5px;"></i></a>
+                                <a href="#"><i class="fa fa-trash"
+                                        style="font-size: 18px; padding:5px;"></i></a> -->
+                            <a href="#">Edit</a>
+                            <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>gszdfg</td>
+                        <td>sdfgsdfg</td>
+                        <td>dfgs</td>
+                        <td>gfdfg</td>
+                        <td>dsfgf</td>
+                        <td>dfsgf</td>
+                        <td>dfgsdfg</td>
+                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                height="40px" alt=""></td>
+                        <td>
+                            <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px"
+                                height="40px" alt="">
+                        </td>
+                        <td>
+                            <!-- <a href="#"><i class="fa fa-pen"
+                                        style="font-size: 18px; padding:5px;"></i></a>
+                                <a href="#"><i class="fa fa-trash"
+                                        style="font-size: 18px; padding:5px;"></i></a> -->
+                            <a href="#">Edit</a>
+                            <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>gszdfg</td>
+                        <td>sdfgsdfg</td>
+                        <td>dfgs</td>
+                        <td>gfdfg</td>
+                        <td>dsfgf</td>
+                        <td>dfsgf</td>
+                        <td>dfgsdfg</td>
+                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
+                                height="40px" alt=""></td>
+                        <td>
+                            <img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded-circle" width="40px"
+                                height="40px" alt="">
+                        </td>
+                        <td>
+                            <!-- <a href="#"><i class="fa fa-pen"
+                                        style="font-size: 18px; padding:5px;"></i></a>
+                                <a href="#"><i class="fa fa-trash"
+                                        style="font-size: 18px; padding:5px;"></i></a> -->
+                            <a href="#">Edit</a>
+                            <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>222</td>
                         <td>gszdfg</td>
                         <td>sdfgsdfg</td>
                         <td>dfgs</td>
