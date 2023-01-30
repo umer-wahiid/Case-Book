@@ -21,53 +21,63 @@
                     <h5 class="card-title">Add Lawyer</h5>
 
                     <!-- General Form Elements -->
-                    <form>
+                    <form action="{{url('admin/lawyers/store')}}" enctype="multipart/form-data" method="POST">
+                        @csrf
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Lawyer ID</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" required name="lawyerid" class="form-control">
+                                <span class="text-danger">@error('lawyerid'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" required name="name" class="form-control">
+                                <span class="text-danger">@error('name'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Father Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" name="fname" class="form-control">
+                                <span class="text-danger">@error('fname'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control">
+                                <input type="email" required name="email" class="form-control">
+                                <span class="text-danger">@error('email'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label">Phone.</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control">
+                                <input type="number" required name="phone" class="form-control">
+                                <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label">Address</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" style="height: 100px"></textarea>
+                                <textarea class="form-control" name="address" style="height: 100px"></textarea>
+                                <span class="text-danger">@error('address'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label">Profile Photo</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file"
+                                    accept='image/jpeg , image/jpg, image/gif, image/png' name="profile" id="formFile">
+                                <span class="text-danger">@error('profile'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Rank/Post</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" required name="post" class="form-control">
+                                <span class="text-danger">@error('post'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <!-- <div class="row mb-3">
@@ -99,7 +109,8 @@
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control">
+                                <input type="password" required name="password" class="form-control">
+                                <span class="text-danger">@error('password'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <!-- <fieldset class="row mb-3">

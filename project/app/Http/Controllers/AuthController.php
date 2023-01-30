@@ -21,7 +21,14 @@ class AuthController extends Controller
     }
     public function index()
     {
-        return view ('admin.lawyer.view');
+        // return view ('admin.lawyer.view');
+        $show = DB::table('users')
+        ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+        ->get();
+        // $image = DB::table('cars')->where('id', )->first();
+        // $images = explode('|', $image->moreimage);
+        // return view ('admin.car.show',['show'=>$show],['images'=>$images]);
+        return view ('admin.lawyer.view',['show'=>$show]);
     }
 
     /**
@@ -42,7 +49,32 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'lawyerid'=>'required|unique:users',
+            'name'=>'required',
+            'email'=>'required|unique:users',
+            'password'=>'required',
+        ]);
+
+
+        $name = $request->file('profile')->getClientOriginalName();
+        $path = $request->file('profile')->move('admin/assets/img/profiles');
+
+
+        $create  = new User();
+        $create->lawyerid = $request->lawyerid;
+        $create->name = $request->name;
+        $create->fname = $request->fname;
+        $create->email = $request->email;
+        $create->phone = $request->phone;
+        $create->address = $request->address;
+        $create->profile = $path;
+        $create->post = $request->post;
+        $create->role = 1;
+        $create->password = Hash::make($request->password);
+        $create->save();
+
+        return redirect('admin/lawyers/index');
     }
 
     /**
@@ -87,6 +119,8 @@ class AuthController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = User::find($id);
+        $delete->delete();
+        return redirect('admin/lawyers/index');
     }
 }

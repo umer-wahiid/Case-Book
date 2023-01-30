@@ -23,138 +23,36 @@
                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>Lawyer ID</th>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th>Father Name</th>
+                        <th>Father</th>
                         <th>Email</th>
                         <th>Phone.</th>
-                        <th>Address</th>
+                        <!-- <th>Address</th> -->
                         <th>Image</th>
                         <th>Post</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($show as $key=>$item)
                     <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
+                        <td>{{++$key}}</td>
+                        <td>{{$item->lawyerid}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->fname}}</td>
+                        <td>{{$item->email}}</td>
+                        <td>{{$item->phone}}</td>
+                        <!-- <td>{{$item->address}}</td> -->
+                        <td><img src="{{url($item->profile)}}" class="rounded" width="50px" height="40px" alt=""></td>
+                        <td>{{$item->post}}</td>
                         <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
+                            <a href="{{ url('admin/lawyers/edit')}}/{{$item->id}}"><i class="fa fa-pen" style="font-size: 18px; padding:5px;"></i></a>
+                            <a href="{{ url('admin/lawyers/destroy')}}/{{$item->id}}"><i class="fa fa-trash" style="font-size: 18px; padding:5px;"></i></a>
+                            <a href="{{ url('admin/lawyers/view')}}/{{$item->id}}"><i class="fa fa-eye" style="font-size: 18px; padding:5px;"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
-                        <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
-                        <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
-                        <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
-                        <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>gszdfg</td>
-                        <td>sdfgsdfg</td>
-                        <td>dfgs</td>
-                        <td>gfdfg</td>
-                        <td>dsfgf</td>
-                        <td>dfsgf</td>
-                        <td><img src="{{url('admin/assets/img/profile-img.jpg')}}" class="rounded" width="50px"
-                        height="40px" alt=""></td>
-                        <td>dfgsdfg</td>
-                        <td>
-                            <!-- <a href="#"><i class="fa fa-pen"
-                                        style="font-size: 18px; padding:5px;"></i></a>
-                                <a href="#"><i class="fa fa-trash"
-                                        style="font-size: 18px; padding:5px;"></i></a> -->
-                            <a href="#">Edit</a>
-                            <a href="#">Remove</a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
 
