@@ -41,6 +41,16 @@ class AuthController extends Controller
         return view ('admin.lawyer.add');
     }
 
+    public function detail($id)
+    {
+        $detail = DB::table('users')
+        ->where('users.id',$id)
+        ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+        ->get();
+ 
+        return view ('admin.lawyer.detail',['detail'=>$detail]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
