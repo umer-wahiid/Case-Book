@@ -5,7 +5,7 @@
     <h1>Add New Lawyer</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item">Lawyers</li>
             <li class="breadcrumb-item active">Add Lawyer</li>
         </ol>

@@ -39,10 +39,9 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('index',[AuthController::class,'index']);
         Route::get('create',[AuthController::class,'create']);
         Route::get('detail/{id}',[AuthController::class,'detail']);
+        Route::post('update/{id}',[AuthController::class,'update']);
         Route::post('store',[AuthController::class,'store']);
         Route::get('show',[AuthController::class,'show']);
-        Route::get('reply/{id}',[AuthController::class,'reply']);
-        Route::post('replymail/{id}',[AuthController::class,'replymail']);
         Route::get('destroy/{id}',[AuthController::class,'destroy']);
     });
 

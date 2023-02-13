@@ -5,7 +5,7 @@
     <h1>View Lawyers</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item">Lawyers</li>
             <li class="breadcrumb-item active">View Lawyers</li>
         </ol>
@@ -47,8 +47,6 @@
                         <td><img src="{{url($item->profile)}}" class="rounded" width="50px" height="40px" alt=""></td>
                         <td>{{$item->post}}</td>
                         <td>
-                            <a href="{{ url('admin/lawyers/edit')}}/{{$item->id}}"><i class="fa fa-pen"
-                                    style="font-size: 18px; padding:5px;"></i></a>
                             <a href="{{ url('admin/lawyers/destroy')}}/{{$item->id}}"><i class="fa fa-trash"
                                     style="font-size: 18px; padding:5px;"></i></a>
                             <a href="{{ url('admin/lawyers/detail')}}/{{$item->id}}"><i class="fa fa-eye"

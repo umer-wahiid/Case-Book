@@ -5,7 +5,7 @@
     <h1>View Lawyers</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item">Cases</li>
             <li class="breadcrumb-item active">View Cases</li>
         </ol>

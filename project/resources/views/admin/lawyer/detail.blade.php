@@ -5,7 +5,7 @@
     <h1>Profile</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item">Lawyers</li>
             <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -94,7 +94,8 @@
                         <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                             <!-- Profile Edit Form -->
-                            <form  action="{{url('profile/update')}}/{{$detail[0]->id}}" method="post" enctype="multipart/form-data">
+                            <form action="{{url('admin/lawyers/update')}}/{{$detail[0]->id}}" method="post"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
@@ -160,7 +161,9 @@
                                 <div class="row mb-3">
                                     <label for="Email" class="col-md-4 col-lg-3 col-form-label">Profile</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="password" type="text" class="form-control" id="Email" value="">
+                                        <input class="form-control" type="file"
+                                            accept='image/jpeg , image/jpg, image/gif, image/png' name="profile"
+                                            id="formFile">
                                     </div>
                                 </div>
 

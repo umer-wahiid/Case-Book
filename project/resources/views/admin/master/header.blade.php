@@ -50,7 +50,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="{{url('/')}}" class="logo d-flex align-items-center">
+            <a href="{{url('/dashboard')}}" class="logo d-flex align-items-center">
                 <img src="{{asset('admin/assets/img/logo.png')}}" alt="">
                 <span class="d-none d-lg-block">Case Book</span>
             </a>

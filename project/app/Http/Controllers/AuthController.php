@@ -129,38 +129,36 @@ class AuthController extends Controller
 
         
         
-        if($request->password == "" and $request->image == ""){
+        if($request->password == "" and $request->profile == ""){
             
             $create  = User::find($id);
             $create->name = $request->name;
-            $create->username = $request->username;
+            $create->fname = $request->fname;
             $create->email = $request->email;
-            $create->contact = $request->contact;
+            $create->phone = $request->phone;
             $create->address = $request->address;
-            $create->city = $request->city;
-            $create->country = $request->country;
+            $create->post = $request->post;
             $create->update();
             
-            return redirect('profile');
+            return redirect('admin/lawyers/index');
         }
 
         
         if($request->password == ""){
-            $name = $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->move('admin/assets/user_images');
+            $name = $request->file('profile')->getClientOriginalName();
+            $path = $request->file('profile')->move('admin/assets/img/profiles');
             
             $create  = User::find($id);
             $create->name = $request->name;
-            $create->username = $request->username;
+            $create->fname = $request->fname;
             $create->email = $request->email;
-            $create->contact = $request->contact;
+            $create->phone = $request->phone;
             $create->address = $request->address;
-            $create->city = $request->city;
-            $create->country = $request->country;
-            $create->image = $path;
+            $create->post = $request->post;
+            $create->profile = $path;
             $create->update();
     
-            return redirect('profile');
+            return redirect('admin/lawyers/index');
         }
 
 
@@ -168,36 +166,34 @@ class AuthController extends Controller
 
             $create  = User::find($id);
             $create->name = $request->name;
-            $create->username = $request->username;
+            $create->fname = $request->fname;
             $create->email = $request->email;
-            $create->contact = $request->contact;
+            $create->phone = $request->phone;
             $create->address = $request->address;
-            $create->city = $request->city;
-            $create->country = $request->country;
+            $create->post = $request->post;
             $create->password = Hash::make($request->password);
             $create->update();
     
-            return redirect('profile');
+            return redirect('admin/lawyers/index');
         }
 
 
         else{
-            $name = $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->move('admin/assets/user_images');
+            $name = $request->file('profile')->getClientOriginalName();
+            $path = $request->file('profile')->move('admin/assets/img/profiles');
             
             $create  = User::find($id);
             $create->name = $request->name;
-            $create->username = $request->username;
+            $create->fname = $request->fname;
             $create->email = $request->email;
-            $create->contact = $request->contact;
+            $create->phone = $request->phone;
             $create->address = $request->address;
-            $create->city = $request->city;
-            $create->country = $request->country;
+            $create->post = $request->post;
             $create->password = Hash::make($request->password);
-            $create->image = $path;
+            $create->profile = $path;
             $create->update();
     
-            return redirect('profile');
+            return redirect('admin/lawyers/index');
         }
 
     }
