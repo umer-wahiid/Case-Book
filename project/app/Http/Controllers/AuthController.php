@@ -118,7 +118,115 @@ class AuthController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'fname'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'address'=>'required',
+            'post'=>'required',
+        ]);
+
+        
+        
+        if($request->password == "" and $request->image == ""){
+            
+            $create  = User::find($id);
+            $create->name = $request->name;
+            $create->username = $request->username;
+            $create->email = $request->email;
+            $create->contact = $request->contact;
+            $create->address = $request->address;
+            $create->city = $request->city;
+            $create->country = $request->country;
+            $create->update();
+            
+            return redirect('profile');
+        }
+
+        
+        if($request->password == ""){
+            $name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->move('admin/assets/user_images');
+            
+            $create  = User::find($id);
+            $create->name = $request->name;
+            $create->username = $request->username;
+            $create->email = $request->email;
+            $create->contact = $request->contact;
+            $create->address = $request->address;
+            $create->city = $request->city;
+            $create->country = $request->country;
+            $create->image = $path;
+            $create->update();
+    
+            return redirect('profile');
+        }
+
+
+        if($request->image == ""){
+
+            $create  = User::find($id);
+            $create->name = $request->name;
+            $create->username = $request->username;
+            $create->email = $request->email;
+            $create->contact = $request->contact;
+            $create->address = $request->address;
+            $create->city = $request->city;
+            $create->country = $request->country;
+            $create->password = Hash::make($request->password);
+            $create->update();
+    
+            return redirect('profile');
+        }
+
+
+        else{
+            $name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->move('admin/assets/user_images');
+            
+            $create  = User::find($id);
+            $create->name = $request->name;
+            $create->username = $request->username;
+            $create->email = $request->email;
+            $create->contact = $request->contact;
+            $create->address = $request->address;
+            $create->city = $request->city;
+            $create->country = $request->country;
+            $create->password = Hash::make($request->password);
+            $create->image = $path;
+            $create->update();
+    
+            return redirect('profile');
+        }
+
+    }
+
+    public function storelogin(Request $request)
+    {
+        $request->validate([
+            'email'=>'required',
+            'password'=>'required',
+        ]);
+
+
+        $data = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+
+        if(Auth::attempt($data)){
+            return redirect('/dashboard');
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 
     /**

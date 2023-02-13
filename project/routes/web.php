@@ -16,11 +16,22 @@ use App\Http\Controllers\CaseregController;
 */
 
 Route::get('/', function () {
+    return view('website/home');
+});
+
+Route::get('/login', function () {
+    return view('admin/login');
+});
+
+Route::get('/dashboard', function () {
     return view('admin/dashboard');
 });
 
 Route::group(['prefix'=>'admin'],function(){
     
+    Route::post('storelogin',[AuthController::class,'storelogin']);
+    Route::get('logout',[AuthController::class,'logout']);
+
     
     //Route::get('/',[adminController::class,'index']);
     
