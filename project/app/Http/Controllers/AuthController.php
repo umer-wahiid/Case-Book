@@ -21,14 +21,14 @@ class AuthController extends Controller
     }
     public function index()
     {
-        // return view ('admin.lawyer.view');
+        if(Auth::user()->role==2)
+        {
         $show = DB::table('users')
         ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
         ->get();
-        // $image = DB::table('cars')->where('id', )->first();
-        // $images = explode('|', $image->moreimage);
-        // return view ('admin.car.show',['show'=>$show],['images'=>$images]);
+
         return view ('admin.lawyer.view',['show'=>$show]);
+        }
     }
 
     /**
@@ -139,8 +139,19 @@ class AuthController extends Controller
             $create->address = $request->address;
             $create->post = $request->post;
             $create->update();
-            
+           
+            if(Auth::user()->role==2)
+            {
             return redirect('admin/lawyers/index');
+            }
+            else{
+                $detail = DB::table('users')
+                ->where('users.id',$id)
+                ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+                ->get();
+         
+                return view ('admin.lawyer.detail',['detail'=>$detail]);
+            }
         }
 
         
@@ -158,7 +169,18 @@ class AuthController extends Controller
             $create->profile = $path;
             $create->update();
     
+            if(Auth::user()->role==2)
+            {
             return redirect('admin/lawyers/index');
+            }
+            else{
+                $detail = DB::table('users')
+                ->where('users.id',$id)
+                ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+                ->get();
+         
+                return view ('admin.lawyer.detail',['detail'=>$detail]);
+            }
         }
 
 
@@ -174,7 +196,18 @@ class AuthController extends Controller
             $create->password = Hash::make($request->password);
             $create->update();
     
+            if(Auth::user()->role==2)
+            {
             return redirect('admin/lawyers/index');
+            }
+            else{
+                $detail = DB::table('users')
+                ->where('users.id',$id)
+                ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+                ->get();
+         
+                return view ('admin.lawyer.detail',['detail'=>$detail]);
+            }
         }
 
 
@@ -193,7 +226,18 @@ class AuthController extends Controller
             $create->profile = $path;
             $create->update();
     
+            if(Auth::user()->role==2)
+            {
             return redirect('admin/lawyers/index');
+            }
+            else{
+                $detail = DB::table('users')
+                ->where('users.id',$id)
+                ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+                ->get();
+         
+                return view ('admin.lawyer.detail',['detail'=>$detail]);
+            }
         }
 
     }
@@ -222,7 +266,7 @@ class AuthController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 
     /**

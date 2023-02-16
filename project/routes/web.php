@@ -24,7 +24,12 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', function () {
+    if(Auth::user()){
     return view('admin/dashboard');
+    }
+    else{
+        return view('website/home');
+    }
 });
 
 Route::group(['prefix'=>'admin'],function(){
