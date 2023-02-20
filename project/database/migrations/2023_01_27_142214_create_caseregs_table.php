@@ -15,10 +15,11 @@ class CreateCaseregsTable extends Migration
     {
         Schema::create('caseregs', function (Blueprint $table) {
             $table->id();
-            $table->string('CaseNo');
+            $table->string('CaseId');
             $table->date('DOB');
             $table->string('PName');
-            $table->string('OName');
+            $table->string('PEmail');
+            $table->string('OName')->nullable();
             $table->string('Matter',1000);
             $table->timestamps();
         });

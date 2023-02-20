@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Casereg;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class CaseregController extends Controller
 {
     /**
@@ -14,7 +15,14 @@ class CaseregController extends Controller
      */
     public function index()
     {
-        return view ('admin.case.view');
+        if(Auth::user())
+        {
+        $show = DB::table('caseregs')
+        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
+        ->get();
+
+        return view ('admin.case.view',['show'=>$show]);
+        }
     }
 
     /**
@@ -35,7 +43,24 @@ class CaseregController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'CaseId'=>'required|unique:Caseregs',
+            'DOB'=>'required',
+            'PName'=>'required',
+            'PEmail'=>'required',
+            'Matter'=>'required'
+        ]);
+
+        $create  = new Casereg();
+        $create->CaseId = $request->CaseId;
+        $create->DOB = $request->DOB;
+        $create->PName = $request->PName;
+        $create->PEmail = $request->PEmail;
+        $create->OName = $request->OName;
+        $create->Matter = $request->Matter;
+        $create->save();
+
+        return redirect('admin/cases/index');
     }
 
     /**
@@ -78,8 +103,10 @@ class CaseregController extends Controller
      * @param  \App\Models\Casereg  $casereg
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Casereg $casereg)
+    public function destroy($id)
     {
-        //
+        $delete = Casereg::find($id);
+        $delete->delete();
+        return redirect('admin/cases/index');
     }
 }
