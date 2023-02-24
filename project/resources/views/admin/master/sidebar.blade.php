@@ -42,12 +42,17 @@
                <ul id="components-na1v" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                    <li>
                        <a href="{{url('admin/cases/create')}}">
-                           <i class="bi bi-circle"></i><span>Add</span>
+                           <i class="bi bi-circle"></i><span>Add Case</span>
                        </a>
                    </li>
                    <li>
                        <a href="{{url('admin/cases/index')}}">
                            <i class="bi bi-circle"></i><span>View</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="{{url('admin/detail/create')}}">
+                           <i class="bi bi-circle"></i><span>Update Case</span>
                        </a>
                    </li>
                </ul>
