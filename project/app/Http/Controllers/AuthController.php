@@ -38,7 +38,10 @@ class AuthController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role==2)
+        {
         return view ('admin.lawyer.add');
+        }
     }
 
     public function detail($id)
@@ -47,8 +50,16 @@ class AuthController extends Controller
         ->where('users.id',$id)
         ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
         ->get();
- 
-        return view ('admin.lawyer.detail',['detail'=>$detail]);
+        
+        if(Auth::user()->id==$id){
+            return view ('admin.lawyer.detail',['detail'=>$detail]);
+        }
+        elseif(Auth::user()->id!=$id && Auth::user()->role==2){
+            return view ('admin.lawyer.detail',['detail'=>$detail]);
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
 
     /**

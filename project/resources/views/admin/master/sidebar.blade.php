@@ -40,6 +40,8 @@
                    <i class="bi bi-menu-button-wide"></i><span>Cases</span><i class="bi bi-chevron-down ms-auto"></i>
                </a>
                <ul id="components-na1v" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+           @if(Auth::user()->role==2)
+
                    <li>
                        <a href="{{url('admin/cases/create')}}">
                            <i class="bi bi-circle"></i><span>Add Case</span>
@@ -50,11 +52,18 @@
                            <i class="bi bi-circle"></i><span>View</span>
                        </a>
                    </li>
+                   @else
                    <li>
+                       <a href="{{url('admin/cases/index')}}">
+                           <i class="bi bi-circle"></i><span>View</span>
+                       </a>
+                   </li>
+                   @endif
+                   <!-- <li>
                        <a href="{{url('admin/detail/create')}}">
                            <i class="bi bi-circle"></i><span>Update Case</span>
                        </a>
-                   </li>
+                   </li> -->
                </ul>
            </li><!-- Case Nav -->
 

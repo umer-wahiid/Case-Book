@@ -43,10 +43,17 @@
                         <td>{{$item->OName}}</td>
                         <td>{{$item->Matter}}</td>
                         <td>
+                            @if(Auth::user()->role==2)
                             <a href="{{ url('admin/cases/destroy')}}/{{$item->id}}"><i class="fa fa-trash"
                                     style="font-size: 18px; padding:5px;"></i></a>
-                            <a href="{{ url('admin/lawyers/detail')}}/{{$item->id}}"><i class="fa fa-eye"
+                            <a href="{{ url('admin/cases/edit')}}/{{$item->id}}"><i class="fa fa-eye"
                                     style="font-size: 18px; padding:5px;"></i></a>
+                            <a href="{{ url('admin/detail/create')}}/{{$item->id}}"><i class="fa fa-pen"
+                                    style="font-size: 18px; padding:5px;"></i></a>
+                            @else
+                            <a href="{{ url('admin/detail/create')}}/{{$item->id}}"><i class="fa fa-pen"
+                                    style="font-size: 18px; padding:5px;"></i></a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

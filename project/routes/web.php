@@ -50,22 +50,22 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('show',[AuthController::class,'show']);
         Route::get('destroy/{id}',[AuthController::class,'destroy']);
     });
-
-
+    
+    
     Route::group(['prefix'=>'cases'],function(){
         Route::get('index',[CaseregController::class,'index']);
         Route::get('create',[CaseregController::class,'create']);
         Route::post('store',[CaseregController::class,'store']);
         Route::get('show',[CaseregController::class,'show']);
-        Route::get('reply/{id}',[CaseregController::class,'reply']);
-        Route::post('replymail/{id}',[CaseregController::class,'replymail']);
+        Route::get('edit/{id}',[CaseregController::class,'edit']);
+        Route::post('update/{id}',[CaseregController::class,'update']);
         Route::get('destroy/{id}',[CaseregController::class,'destroy']);
     });
 
 
     Route::group(['prefix'=>'detail'],function(){
         Route::get('index',[DetailController::class,'index']);
-        Route::get('create',[DetailController::class,'create']);
+        Route::get('create/{id}',[DetailController::class,'create']);
         Route::post('store',[DetailController::class,'store']);
         Route::get('show',[DetailController::class,'show']);
         Route::get('reply/{id}',[DetailController::class,'reply']);

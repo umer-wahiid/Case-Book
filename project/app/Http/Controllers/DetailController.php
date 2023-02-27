@@ -24,9 +24,13 @@ class DetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        $case_id = DB::table('caseregs')->get();
+        // $case_id = DB::table('caseregs')->get();
+        $case_id = DB::table('caseregs')
+        ->where('caseregs.id',$id)
+        ->select('caseregs.id','caseregs.CaseId')
+        ->get();
         $lawyer_id = DB::table('users')->get();
         return view ('admin.detail.add',['case_id'=>$case_id],['lawyer_id'=>$lawyer_id]);
     }

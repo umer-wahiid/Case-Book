@@ -35,6 +35,7 @@ class CaseregController extends Controller
         return view ('admin.case.add');
     }
 
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -80,9 +81,14 @@ class CaseregController extends Controller
      * @param  \App\Models\Casereg  $casereg
      * @return \Illuminate\Http\Response
      */
-    public function edit(Casereg $casereg)
+    public function edit($id)
     {
-        //
+        $edit = DB::table('caseregs')
+        ->where('caseregs.id',$id)
+        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
+        ->get();
+ 
+        return view ('admin.case.edit',['edit'=>$edit]);
     }
 
     /**
@@ -92,9 +98,18 @@ class CaseregController extends Controller
      * @param  \App\Models\Casereg  $casereg
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Casereg $casereg)
+    public function update(Request $request,$id)
     {
-        //
+        $create  = Casereg::find($id);
+        $create->CaseId = $request->CaseId;
+        $create->DOB = $request->DOB;
+        $create->PName = $request->PName;
+        $create->PEmail = $request->PEmail;
+        $create->OName = $request->OName;
+        $create->Matter = $request->Matter;
+        $create->update();
+
+        return redirect('admin/cases/index');
     }
 
     /**

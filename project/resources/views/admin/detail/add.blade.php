@@ -26,40 +26,10 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Case No.</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="CaseNo" value="Select Lawyer Id"
-                                    placeholder="Select Category">
-                                    @foreach($case_id as $item)
-                                    <option value="{{$item->CaseId}}">{{$item->CaseId}}</option>
-                                    @endforeach
-                                </Select>
-                                <!-- <input type="text" required name="CaseNo" class="form-control"> -->
+                                <input type="text" required name="CaseNo" value="{{$case_id[0]->CaseId}}" readonly class="form-control">
                                 <span class="text-danger">@error('CaseNo'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <!-- <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Lawyer ID</label>
-                            <div class="col-sm-10">
-                                <select class="form-control"
-                                    name="LId" value="Select Lawyer Id" placeholder="Select Category">
-                                    @foreach($lawyer_id as $item)
-                                    <option value="{{$item->lawyerid}}">{{$item->lawyerid}}</option>
-                                    @endforeach
-                                </Select>
-                                <span class="text-danger">@error('LId'){{$message}}@enderror</span>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Lawyer Name</label>
-                            <div class="col-sm-10">
-                                <select class="form-control"
-                                    name="LName" value="Select Lawyer Name" placeholder="Select Category">
-                                    @foreach($lawyer_id as $item)
-                                    <option value="{{$item->name}} {{$item->fname}}">{{$item->name}} {{$item->fname}}</option>
-                                    @endforeach
-                                </Select>
-                                <span class="text-danger">@error('LName'){{$message}}@enderror</span>
-                            </div>
-                        </div> -->
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Date Of Commence</label>
                             <div class="col-sm-10">
