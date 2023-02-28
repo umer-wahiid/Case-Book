@@ -75,7 +75,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#about" class="get-started-btn scrollto">Search Case</a>
+      <a href="{{('/search')}}" class="get-started-btn scrollto">Search Case</a>
 
     </div>
   </header><!-- End Header -->
@@ -606,7 +606,7 @@
             </div>
           </div>
         @endforeach
-          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
                 <img src="{{asset('website/assets/img/team/team-2.jpg')}}" class="img-fluid" alt="">
@@ -658,7 +658,7 @@
                 <span>Accountant</span>
               </div>
             </div>
-          </div> -->
+          </div>
 
         </div>
 

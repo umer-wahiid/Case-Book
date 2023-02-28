@@ -21,7 +21,6 @@ use App\Http\Controllers\website;
 //     return view('website/home');
 // });
 
-Route::get('/',[website::class,'index']);
 
 Route::get('/login', function () {
     return view('admin/login');
@@ -35,6 +34,19 @@ Route::get('/dashboard', function () {
         return view('website/home');
     }
 });
+
+
+Route::group(['prefix'=>'/'],function(){
+    Route::get('/',[website::class,'index']);
+    Route::get('search',[website::class,'search']);
+    Route::post('findsearch',[website::class,'findsearch']);
+    Route::get('detail/{id}',[website::class,'detail']);
+    Route::post('update/{id}',[website::class,'update']);
+    Route::get('show',[website::class,'show']);
+    Route::get('destroy/{id}',[website::class,'destroy']);
+});
+
+
 
 Route::group(['prefix'=>'admin'],function(){
     

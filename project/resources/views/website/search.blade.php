@@ -57,7 +57,7 @@
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/logo.png" alt="">
+                                    <img src="{{asset('admin/assets/img/logo.png')}}" alt="">
                                     <span class="d-none d-lg-block">Case Book</span>
                                 </a>
                             </div><!-- End Logo -->
@@ -67,37 +67,30 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                        <p class="text-center small">Enter your Email & password to login</p>
+                                        <h5 class="card-title text-center pb-0 fs-4">Search Your Case</h5>
+                                        <p class="text-center small">Enter your Email & Case No. to Search</p>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" method="post" action="{{url('admin/storelogin')}}">
+                                    <form class="row g-3 needs-validation" method="post" action="{{url('/findsearch')}}">
                                     @csrf
                                         <div class="col-12">
                                             <label for="yourUsername" class="form-label">Email</label>
                                             <div class="input-group has-validation">
-                                                <input type="text" name="email" class="form-control"
+                                                <input type="text" name="PEmail" class="form-control"
                                                     id="yourUsername" required>
                                                 <div class="invalid-feedback">Please enter your email.</div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control"
+                                            <label for="yourPassword" class="form-label">Case No.</label>
+                                            <input type="text" name="CaseId" class="form-control"
                                                 id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <div class="invalid-feedback">Please enter your Case No.</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember"
-                                                    value="true" id="rememberMe">
-                                                <label class="form-check-label" for="rememberMe">Remember me</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Login</button>
+                                            <button class="btn btn-primary w-100" type="submit">Search</button>
                                         </div>
 
                                     </form>

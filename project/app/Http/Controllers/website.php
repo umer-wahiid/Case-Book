@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\cr;
+use App\Models\Casereg;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\ABC;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\CaseregController;
 
 class website extends Controller
 {
@@ -25,11 +28,11 @@ class website extends Controller
     }
     public function search()
     {
-        $show = DB::table('users')
-        ->select('users.id','users.lawyerid','users.name','users.fname','users.email','users.phone','users.address','users.profile','users.post',)
+        $show = DB::table('caseregs')
+        ->select('caseregs.id','caseregs.CaseId','caseregs.PEmail')
         ->get();
 
-        return view ('website.home',['show'=>$show]);
+        return view ('website.search',['show'=>$show]);
     }
 
     /**
@@ -37,9 +40,27 @@ class website extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function findsearch(Request $request)
     {
-        //
+        $request->validate([
+            'PEmail'=>'required',
+            'CaseId'=>'required',
+        ]);
+
+
+        $data = [
+            'PEmail' => $request->PEmail,
+            'CaseId' => $request->CaseId,
+        ];
+
+
+        // if(DB::table('caseregs',$data)){
+        if(Casereg::find($data)){
+            return "search";
+        }
+        elseif(!Casereg::find($data)){
+            return "wrong credentials";
+        }
     }
 
     /**
