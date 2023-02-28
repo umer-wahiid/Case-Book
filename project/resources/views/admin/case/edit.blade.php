@@ -61,12 +61,10 @@
                                 <div class="col-lg-3 col-md-4 label">Party Email</div>
                                 <div class="col-lg-9 col-md-8">{{$edit[0]->PEmail}}</div>
                             </div>
-
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Opposition Name</div>
                                 <div class="col-lg-9 col-md-8">{{$edit[0]->OName}}</div>
                             </div>
-
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Matter</div>
                                 <div class="col-lg-9 col-md-8">{{$edit[0]->Matter}}</div>
@@ -81,7 +79,7 @@
                                 <div class="row mb-3">
                                     <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Case No.</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="CaseId" type="text" class="form-control" id="fullName"
+                                        <input name="CaseId" type="text" placeholder="N/A" class="form-control" id="fullName"
                                             value="{{$edit[0]->CaseId}}">
                                         <span class="text-danger">@error('CaseId'){{$message}}@enderror</span>
 
@@ -91,7 +89,7 @@
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Date Of Beginning</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="DOB" type="text" class="form-control" id="fullName"
+                                        <input name="DOB" type="text" placeholder="N/A" class="form-control" id="fullName"
                                             value="{{$edit[0]->DOB}}">
                                         <span class="text-danger">@error('DOB'){{$message}}@enderror</span>
 
@@ -101,7 +99,7 @@
                                 <div class="row mb-3">
                                     <label for="company" class="col-md-4 col-lg-3 col-form-label">PName</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="PName" type="text" class="form-control" id="company"
+                                        <input name="PName" type="text" placeholder="N/A" class="form-control" id="company"
                                             value="{{$edit[0]->PName}}">
                                         <span class="text-danger">@error('PName'){{$message}}@enderror</span>
 
@@ -111,7 +109,7 @@
                                 <div class="row mb-3">
                                     <label for="Job" class="col-md-4 col-lg-3 col-form-label">PEmail</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="PEmail" type="email" class="form-control" id="Job"
+                                        <input name="PEmail" type="email" placeholder="N/A" class="form-control" id="Job"
                                         value="{{$edit[0]->PEmail}}">
                                         <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                                         
@@ -121,7 +119,7 @@
                                 <div class="row mb-3">
                                     <label for="company" class="col-md-4 col-lg-3 col-form-label">OName</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="OName" type="text" class="form-control" id="company"
+                                        <input name="OName" type="text" placeholder="N/A" class="form-control" id="company"
                                             value="{{$edit[0]->OName}}">
                                         <span class="text-danger">@error('OName'){{$message}}@enderror</span>
 
@@ -131,7 +129,7 @@
                                 <div class="row mb-3">
                                     <label for="Address" class="col-md-4 col-lg-3 col-form-label">Matter</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <textarea name="Matter" type="text" class="form-control" id="Address"
+                                        <textarea name="Matter" placeholder="N/A" type="text" class="form-control" id="Address"
                                             value="">{{$edit[0]->Matter}}</textarea>
                                         <span class="text-danger">@error('Matter'){{$message}}@enderror</span>
 

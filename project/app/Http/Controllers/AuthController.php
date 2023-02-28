@@ -38,12 +38,21 @@ class AuthController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->role==2)
-        {
-        return view ('admin.lawyer.add');
-        }
+        // if(Auth::user()){
+        //     if(Auth::user()->role==2)
+        //     {
+                return view ('admin.lawyer.add');
+        //     }
+        //     else{
+        //         return redirect ('/dashboard');
+        //     }
+        // }
+        // else{
+        //     return redirect ('/');
+        // }
     }
 
+    
     public function detail($id)
     {
         $detail = DB::table('users')
