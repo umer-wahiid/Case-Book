@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CaseregController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\website;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,11 @@ use App\Http\Controllers\DetailController;
 |
 */
 
-Route::get('/', function () {
-    return view('website/home');
-});
+// Route::get('/', function () {
+//     return view('website/home');
+// });
+
+Route::get('/',[website::class,'index']);
 
 Route::get('/login', function () {
     return view('admin/login');

@@ -42,7 +42,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Gp<span>.</span></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Case Book<span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{asset('website/assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
 
@@ -50,10 +50,10 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
+          <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> -->
+          <li><a class="nav-link scrollto" href="#team">Lawyers</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -69,13 +69,13 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+      <a href="#about" class="get-started-btn scrollto">Search Case</a>
 
     </div>
   </header><!-- End Header -->
@@ -86,8 +86,7 @@
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>Powerful Digital Solutions With Gp<span>.</span></h1>
-          <h2>We are team of talented digital marketers</h2>
+          <h1>Bhutta Law Associates<span>.</span></h1>
         </div>
       </div>
 
@@ -159,7 +158,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!-- <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
 
         <div class="clients-slider swiper">
@@ -177,14 +176,15 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section> -->
+    <!-- End Clients Section -->
 
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <!-- <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="image col-lg-6" style='background-image: url("assets/img/features.jpg')}}");' data-aos="fade-right"></div>
+          <div class="image col-lg-6" style='background-image: url{{asset('assets/website/img/features.jpg')}} data-aos="fade-right"></div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
@@ -210,10 +210,11 @@
         </div>
 
       </div>
-    </section><!-- End Features Section -->
+    </section> -->
+    <!-- End Features Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <!-- <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -273,10 +274,11 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section> -->
+    <!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
+    <!-- <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
@@ -286,10 +288,11 @@
         </div>
 
       </div>
-    </section><!-- End Cta Section -->
+    </section> -->
+    <!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!-- <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -439,10 +442,11 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section> -->
+    <!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
@@ -486,15 +490,16 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> -->
+    <!-- End Counts Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
       <div class="container" data-aos="zoom-in">
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -511,7 +516,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -524,7 +529,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -537,7 +542,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -550,7 +555,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -563,13 +568,14 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> -->
+    <!-- End Testimonials Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -577,15 +583,15 @@
 
         <div class="section-title">
           <h2>Team</h2>
-          <p>Check our Team</p>
+          <p>Check our Lawyers</p>
         </div>
 
         <div class="row">
-
+        @foreach($show as $key=>$item)
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{{asset('website/assets/img/team/team-1.jpg')}}" class="img-fluid" alt="">
+                <img src="{{url($item->profile)}}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -594,13 +600,13 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>{{$item->name}}</h4>
+                <span>{{$item->post}}</span>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        @endforeach
+          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
                 <img src="{{asset('website/assets/img/team/team-2.jpg')}}" class="img-fluid" alt="">
@@ -652,7 +658,7 @@
                 <span>Accountant</span>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
