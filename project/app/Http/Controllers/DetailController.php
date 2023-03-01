@@ -57,6 +57,8 @@ class DetailController extends Controller
             // $path = $request->file('image')->move('admin/assets/Docx/'.$casename.'/');
             $image = array();
             $files = $request->file('Docx');
+
+            if($files!=null){
             foreach ($files as $file) {
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower ($file->getClientOriginalExtension());
@@ -84,8 +86,28 @@ class DetailController extends Controller
             $create->Docx = implode('|', $image);
             $create->UpdatedBy = Auth::user()->lawyerid;
             $create->save();
+        }
+        else{
 
-            return redirect('admin/detail/index');
+
+            $create  = new detail();
+            $create->CaseNo = $request->CaseNo;
+            $create->LId = Auth::user()->lawyerid;
+            $create->LName =  Auth::user()->name;
+            $create->DOC = $request->DOC;
+            $create->Court = $request->Court;
+            $create->STime = $request->STime;
+            $create->ETime = $request->ETime;
+            $create->Details = $request->Details;
+            $create->Status = $request->Status;
+            $create->ND = $request->ND;
+            $create->FNo = $request->FNo;
+            $create->ALId = $request->ALId;
+            $create->Remarks = $request->Remarks;
+            $create->UpdatedBy = Auth::user()->lawyerid;
+            $create->save();
+        }
+            return redirect('admin/cases/index');
         
     }
 

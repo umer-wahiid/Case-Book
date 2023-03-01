@@ -28,11 +28,12 @@ class website extends Controller
     }
     public function search()
     {
-        $show = DB::table('caseregs')
-        ->select('caseregs.id','caseregs.CaseId','caseregs.PEmail')
-        ->get();
+        // $show = DB::table('caseregs')
+        // ->select('caseregs.id','caseregs.CaseId','caseregs.PEmail')
+        // ->get();
 
-        return view ('website.search',['show'=>$show]);
+        // return view ('website.search',['show'=>$show]);
+        return view ('website.search');
     }
 
     /**
@@ -43,24 +44,38 @@ class website extends Controller
     public function findsearch(Request $request)
     {
         $request->validate([
-            'PEmail'=>'required',
             'CaseId'=>'required',
+            'PEmail'=>'required',
         ]);
 
 
-        $data = [
-            'PEmail' => $request->PEmail,
-            'CaseId' => $request->CaseId,
-        ];
+        $CaseId = $request->CaseId;
+        $PEmail = $request->PEmail;
+        $check = DB::table('caseregs')->where('PEmail', $PEmail)->where('CaseId', $CaseId)->first();
+        if($check)
+        {
+            $show = DB::table('caseregs')
+            ->where('CaseId',$CaseId)
+            ->select('caseregs.id','caseregs.CaseId','caseregs.PEmail')
+            ->get();
+            $detail = DB::table('details')
+            ->where('CaseNo',$CaseId)
+            ->get();
 
+            return view('website.searchedcase',['show'=>$show],['detail'=>$detail]);
+        }
+        else
+        {
+            return "not exist";
+        }
 
         // if(DB::table('caseregs',$data)){
-        if(Casereg::find($data)){
-            return "search";
-        }
-        elseif(!Casereg::find($data)){
-            return "wrong credentials";
-        }
+        // if(Casereg::find($data)){
+        //     return "search";
+        // }
+        // elseif(!Casereg::find($data)){
+        //     return "wrong credentials";
+        // }
     }
 
     /**
