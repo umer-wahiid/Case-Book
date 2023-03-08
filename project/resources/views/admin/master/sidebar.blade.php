@@ -52,7 +52,7 @@
                            <i class="bi bi-circle"></i><span>View</span>
                        </a>
                    </li>
-                   @else
+                   @elseif(Auth::user()->role==1)
                    <li>
                        <a href="{{url('admin/cases/index')}}">
                            <i class="bi bi-circle"></i><span>View</span>
