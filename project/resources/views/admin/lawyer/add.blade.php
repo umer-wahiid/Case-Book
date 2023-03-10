@@ -54,7 +54,7 @@
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label">Phone.</label>
                             <div class="col-sm-10">
-                                <input type="number" required name="phone" class="form-control">
+                                <input type="text" required maxlength="11" name="phone" class="form-control">
                                 <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                             </div>
                         </div>
