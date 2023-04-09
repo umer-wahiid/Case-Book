@@ -15,13 +15,13 @@ class CaseregController extends Controller
      */
     public function index()
     {
-        if(Auth::user())
-        {
-        $show = DB::table('caseregs')
-        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.year','caseregs.District','caseregs.CourtType','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
-        ->get();
+            if(Auth::user())
+            {
+            $show = DB::table('caseregs')
+            ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.year','caseregs.District','caseregs.CourtType','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
+            ->get();
 
-        return view ('admin.case.view',['show'=>$show]);
+            return view ('admin.case.view',['show'=>$show]);
         }
     }
 

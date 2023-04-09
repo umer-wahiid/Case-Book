@@ -56,6 +56,7 @@
                                     style="font-size: 18px; padding:5px;"></i></a>
                             <a href="{{ url('admin/detail/create')}}/{{$item->id}}"><i class="fa fa-pen"
                                     style="font-size: 18px; padding:5px;"></i></a>
+                            <a href="{{ url('admin/detail/index')}}/{{$item->CaseId}}">Details</a>
                             @else
                             <a href="{{ url('admin/detail/create')}}/{{$item->id}}"><i class="fa fa-pen"
                                     style="font-size: 18px; padding:5px;"></i></a>

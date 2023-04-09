@@ -79,7 +79,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
     Route::group(['prefix'=>'detail'],function(){
-        Route::get('index',[DetailController::class,'index']);
+        Route::get('index/{id}',[DetailController::class,'index']);
         Route::get('create/{id}',[DetailController::class,'create']);
         Route::post('store',[DetailController::class,'store']);
         Route::get('show',[DetailController::class,'show']);

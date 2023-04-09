@@ -63,11 +63,6 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 label">District</div>
-                                <div class="col-lg-9 col-md-8">{{$edit[0]->District}}</div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Court Type</div>
                                 <div class="col-lg-9 col-md-8">{{$edit[0]->CourtType}}</div>
                             </div>

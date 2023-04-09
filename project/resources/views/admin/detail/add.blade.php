@@ -93,12 +93,11 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Case Assigned to (Lawyer's
                                 ID)</label>
                             <div class="col-sm-10">
-
                                 <div class="col-sm-10">
                                     <select class="form-control" name="ALId" value="Select Lawyer Id"
                                         placeholder="Select Category">
                                         @foreach($lawyer_id as $item)
-                                        <option value="{{$item->lawyerid}}">{{$item->lawyerid}}</option>
+                                        <option value="{{$item->lawyerid}}">{{$item->name}} {{$item->fname}}</option>
                                         @endforeach
                                     </Select>
                                     <span class="text-danger">@error('ALId'){{$message}}@enderror</span>
