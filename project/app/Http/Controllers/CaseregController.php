@@ -18,7 +18,7 @@ class CaseregController extends Controller
         if(Auth::user())
         {
         $show = DB::table('caseregs')
-        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
+        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.year','caseregs.District','caseregs.CourtType','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
         ->get();
 
         return view ('admin.case.view',['show'=>$show]);
@@ -47,6 +47,9 @@ class CaseregController extends Controller
         $request->validate([
             'CaseId'=>'required|unique:Caseregs',
             'DOB'=>'required',
+            'year'=>'required',
+            'District'=>'required',
+            'CourtType'=>'required',
             'PName'=>'required',
             'PEmail'=>'required',
             'Matter'=>'required'
@@ -55,6 +58,9 @@ class CaseregController extends Controller
         $create  = new Casereg();
         $create->CaseId = $request->CaseId;
         $create->DOB = $request->DOB;
+        $create->year = $request->year;
+        $create->District = $request->District;
+        $create->CourtType = $request->CourtType;
         $create->PName = $request->PName;
         $create->PEmail = $request->PEmail;
         $create->OName = $request->OName;
@@ -85,7 +91,7 @@ class CaseregController extends Controller
     {
         $edit = DB::table('caseregs')
         ->where('caseregs.id',$id)
-        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
+        ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.year','caseregs.District','caseregs.CourtType','caseregs.PName','caseregs.PEmail','caseregs.OName','caseregs.Matter')
         ->get();
  
         return view ('admin.case.edit',['edit'=>$edit]);
@@ -100,9 +106,22 @@ class CaseregController extends Controller
      */
     public function update(Request $request,$id)
     {
+        $request->validate([
+            'DOB'=>'required',
+            'year'=>'required',
+            'District'=>'required',
+            'CourtType'=>'required',
+            'PName'=>'required',
+            'PEmail'=>'required',
+            'Matter'=>'required'
+        ]);
+
         $create  = Casereg::find($id);
         $create->CaseId = $request->CaseId;
         $create->DOB = $request->DOB;
+        $create->year = $request->year;
+        $create->District = $request->District;
+        $create->CourtType = $request->CourtType;
         $create->PName = $request->PName;
         $create->PEmail = $request->PEmail;
         $create->OName = $request->OName;

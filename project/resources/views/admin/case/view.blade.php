@@ -24,7 +24,10 @@
                     <tr>
                         <th>S.No</th>
                         <th>Case ID</th>
-                        <th>Beginning Date</th>
+                        <th>Registeration Date</th>
+                        <th>Year</th>
+                        <th>District</th>
+                        <th>Court Type</th>
                         <th>Party Name</th>
                         <th>Party Email</th>
                         <th>Opposition Name</th>
@@ -38,6 +41,9 @@
                         <td>{{++$key}}</td>
                         <td>{{$item->CaseId}}</td>
                         <td>{{$item->DOB}}</td>
+                        <td>{{$item->year}}</td>
+                        <td>{{$item->District}}</td>
+                        <td>{{$item->CourtType}}</td>
                         <td>{{$item->PName}}</td>
                         <td>{{$item->PEmail}}</td>
                         <td>{{$item->OName}}</td>

@@ -17,6 +17,9 @@ class CreateCaseregsTable extends Migration
             $table->id();
             $table->string('CaseId');
             $table->date('DOB');
+            $table->string('year',4);
+            $table->string('District');
+            $table->string('CourtType');
             $table->string('PName');
             $table->string('PEmail');
             $table->string('OName')->nullable();
