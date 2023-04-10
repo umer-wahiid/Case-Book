@@ -1,0 +1,8 @@
+Command To Refresh Only One Table:
+	--php artisan migrate:refresh --path="database\migrations\2023_01_27_142214_create_caseregs_table.php"
+
+Command To Install Laravel:
+	--composer global require laravel/installer
+
+Link To Download Composer:
+	--https://getcomposer.org/download/

@@ -27,6 +27,9 @@
                         <th>Lawyer Name</th>
                         <th>Date Of Commance</th>
                         <th>Court</th>
+                        <th>Next Date</th>
+                        <th>FIR No.</th>
+                        <th>Case Assign To</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -38,7 +41,16 @@
                         <td>{{$item->LName}}</td>
                         <td>{{$item->DOC}}</td>
                         <td>{{$item->Court}}</td>
+                        <td>{{$item->ND}}</td>
+                        <td>{{$item->FNo}}</td>
+                        <td>{{$item->name}}</td>
                         <td>
+                            @if(Auth::user()->role==2)
+                            <a href="{{ url('admin/detail/destroy')}}/{{$item->id}}"><i class="fa fa-trash"
+                                    style="font-size: 18px; padding:5px;"></i></a>
+                            <a href="{{ url('admin/detail/edit')}}/{{$item->id}}"><i class="fa fa-eye"
+                                    style="font-size: 18px; padding:5px;"></i></a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

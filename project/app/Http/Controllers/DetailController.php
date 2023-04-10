@@ -20,10 +20,12 @@ class DetailController extends Controller
         // {
             $show = DB::table('details')
             ->where('details.CaseNo',$id)
-            ->select('details.LId','details.LName','details.DOC','details.Court')
+            ->select('details.id','details.LId','details.LName','details.DOC','details.Court','details.ND','details.FNo','users.name')
+            ->join('users', 'users.lawyerid', '=', 'details.ALId',)
             ->get();
-
+            
             return view ('admin.detail.view',['show'=>$show]);
+            // ->where('countries.country_name', $country)
         // }
     }
 
@@ -93,7 +95,7 @@ class DetailController extends Controller
                 $create->ALId = $request->ALId;
                 $create->Remarks = $request->Remarks;
                 $create->Docx = implode('|', $image);
-                $create->UpdatedBy = Auth::user()->lawyerid;
+                $create->UpdatedBy = Auth::user()->name;
                 $create->save();
         }
         else{
@@ -111,7 +113,7 @@ class DetailController extends Controller
             $create->FNo = $request->FNo;
             $create->ALId = $request->ALId;
             $create->Remarks = $request->Remarks;
-            $create->UpdatedBy = Auth::user()->lawyerid;
+            $create->UpdatedBy = Auth::user()->name;
             $create->save();
         }
         return redirect('admin/cases/index');
@@ -134,9 +136,15 @@ class DetailController extends Controller
      * @param  \App\Models\detail  $detail
      * @return \Illuminate\Http\Response
      */
-    public function edit(detail $detail)
+    public function edit($id)
     {
-        //
+        $edit = DB::table('details')
+        ->where('details.id',$id)
+        ->select('details.id','details.CaseNo','details.LId','details.LName','details.DOC','details.Court','details.Details','details.Status','details.ND','details.FNo','details.Remarks','details.Docx','details.UpdatedBy','details.updated_at','users.name')
+        ->join('users', 'users.lawyerid', '=', 'details.ALId',)
+        ->get();
+ 
+        return view ('admin.detail.edit',['edit'=>$edit]);
     }
 
     /**
@@ -157,8 +165,10 @@ class DetailController extends Controller
      * @param  \App\Models\detail  $detail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(detail $detail)
+    public function destroy($id)
     {
-        //
+        $delete = detail::find($id);
+        $delete->delete();
+        return redirect('admin/cases/index');
     }
 }
