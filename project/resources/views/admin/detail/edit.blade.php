@@ -122,7 +122,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Court</label>
                                     <div class="col-md-8 col-lg-9">
@@ -131,25 +131,25 @@
                                         <span class="text-danger">@error('Court'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Details</label>
                                     <div class="col-md-8 col-lg-9">
                                         <input name="Details" type="text" placeholder="N/A" class="form-control"
-                                        id="fullName" value="{{$edit[0]->Details}}">
+                                            id="fullName" value="{{$edit[0]->Details}}">
                                         <span class="text-danger">@error('Details'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Status</label>
                                     <div class="col-md-8 col-lg-9">
                                         <input name="Status" type="text" placeholder="N/A" class="form-control"
-                                        id="fullName" value="{{$edit[0]->Status}}">
+                                            id="fullName" value="{{$edit[0]->Status}}">
                                         <span class="text-danger">@error('Status'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-   
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Next Date</label>
                                     <div class="col-md-8 col-lg-9">
@@ -158,7 +158,7 @@
                                         <span class="text-danger">@error('ND'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">FIR No.</label>
                                     <div class="col-md-8 col-lg-9">
@@ -167,7 +167,7 @@
                                         <span class="text-danger">@error('FNo'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Case Assign To.</label>
                                     <div class="col-md-8 col-lg-9">
@@ -176,7 +176,7 @@
                                         <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Judge Remarks</label>
                                     <div class="col-md-8 col-lg-9">
@@ -185,7 +185,7 @@
                                         <span class="text-danger">@error('Remarks'){{$message}}@enderror</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Documents</label>
                                     <div class="col-md-8 col-lg-9">
