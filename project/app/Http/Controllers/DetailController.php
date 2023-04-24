@@ -140,7 +140,7 @@ class DetailController extends Controller
     {
         $edit = DB::table('details')
         ->where('details.id',$id)
-        ->select('details.id','details.CaseNo','details.LId','details.LName','details.DOC','details.Court','details.Details','details.Status','details.ND','details.FNo','details.Remarks','details.Docx','details.UpdatedBy','details.updated_at','users.name')
+        ->select('details.id','details.CaseNo','details.LId','details.STime','details.ETime','details.LName','details.DOC','details.Court','details.Details','details.Status','details.ND','details.FNo','details.Remarks','details.Docx','details.UpdatedBy','details.updated_at','users.name')
         ->join('users', 'users.lawyerid', '=', 'details.ALId',)
         ->get();
  
@@ -157,7 +157,6 @@ class DetailController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'CaseNo'=>'required',
             'DOC'=>'required',
             'STime'=>'required',
             'ETime'=>'required',
@@ -165,8 +164,6 @@ class DetailController extends Controller
         ]);
 
         $casename = $request->CaseNo;
-        // $name = $request->file('image')->getClientOriginalName();
-        // $path = $request->file('image')->move('admin/assets/Docx/'.$casename.'/');
         $image = array();
         $files = $request->file('Docx');
         
@@ -181,11 +178,7 @@ class DetailController extends Controller
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;
             };
-            
             $create  = detail::find($id);
-            $create->CaseNo = $request->CaseNo;
-            $create->LId = Auth::user()->lawyerid;
-            $create->LName =  Auth::user()->name;
             $create->DOC = $request->DOC;
             $create->Court = $request->Court;
             $create->STime = $request->STime;
@@ -194,32 +187,28 @@ class DetailController extends Controller
             $create->Status = $request->Status;
             $create->ND = $request->ND;
             $create->FNo = $request->FNo;
-            $create->ALId = $request->ALId;
             $create->Remarks = $request->Remarks;
             $create->Docx = implode('|', $image);
             $create->UpdatedBy = Auth::user()->name;
             $create->update();
         }
-    else{
-        $create  = detail::find($id);
-        $create->CaseNo = $request->CaseNo;
-        $create->LId = Auth::user()->lawyerid;
-        $create->LName =  Auth::user()->name;
-        $create->DOC = $request->DOC;
-        $create->Court = $request->Court;
-        $create->STime = $request->STime;
-        $create->ETime = $request->ETime;
-        $create->Details = $request->Details;
-        $create->Status = $request->Status;
-        $create->ND = $request->ND;
-        $create->FNo = $request->FNo;
-        $create->ALId = $request->ALId;
-        $create->Remarks = $request->Remarks;
-        $create->UpdatedBy = Auth::user()->name;
-        $create->update();
-    }
+        else
+        {
+            $create  = detail::find($id);
+            $create->DOC = $request->DOC;
+            $create->Court = $request->Court;
+            $create->STime = $request->STime;
+            $create->ETime = $request->ETime;
+            $create->Details = $request->Details;
+            $create->Status = $request->Status;
+            $create->ND = $request->ND;
+            $create->FNo = $request->FNo;
+            $create->Remarks = $request->Remarks;
+            $create->UpdatedBy = Auth::user()->name;
+            $create->update();
+        }
 
-        return redirect('admin/edit/');
+        return redirect('admin/cases/index');
     }
 
     /**

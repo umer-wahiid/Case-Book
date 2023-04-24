@@ -63,6 +63,16 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Started at</div>
+                                <div class="col-lg-9 col-md-8">{{$edit[0]->STime}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Ended</div>
+                                <div class="col-lg-9 col-md-8">{{$edit[0]->ETime}}</div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Details</div>
                                 <div class="col-lg-9 col-md-8">{{$edit[0]->Details}}</div>
                             </div>
@@ -133,10 +143,28 @@
                                 </div>
 
                                 <div class="row mb-3">
+                                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Start Time</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="STime" type="time" placeholder="N/A" class="form-control"
+                                            id="fullName" value="{{$edit[0]->STime}}">
+                                        <span class="text-danger">@error('STime'){{$message}}@enderror</span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="about" class="col-md-4 col-lg-3 col-form-label">End Time</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="ETime" type="time" placeholder="N/A" class="form-control"
+                                            id="fullName" value="{{$edit[0]->ETime}}">
+                                        <span class="text-danger">@error('ETime'){{$message}}@enderror</span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Details</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="Details" type="text" placeholder="N/A" class="form-control"
-                                            id="fullName" value="{{$edit[0]->Details}}">
+                                        <textarea name="Details" type="text" class="form-control"
+                                            id="fullName" >{{$edit[0]->Details}}</textarea>
                                         <span class="text-danger">@error('Details'){{$message}}@enderror</span>
                                     </div>
                                 </div>
@@ -169,15 +197,6 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Case Assign To.</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="name" type="text" placeholder="N/A" class="form-control"
-                                            id="fullName" value="{{$edit[0]->name}}">
-                                        <span class="text-danger">@error('name'){{$message}}@enderror</span>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Judge Remarks</label>
                                     <div class="col-md-8 col-lg-9">
                                         <input name="Remarks" type="text" placeholder="N/A" class="form-control"
@@ -187,10 +206,9 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Documents</label>
+                                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Documents / Proofs</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="Remarks" type="text" placeholder="N/A" class="form-control"
-                                            id="fullName" value="{{$edit[0]->Remarks}}">
+                                        <input multiple type="file" name="Docx[]" class="form-control input">
                                         <span class="text-danger">@error('Docx'){{$message}}@enderror</span>
                                     </div>
                                 </div>

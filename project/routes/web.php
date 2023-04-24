@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CaseregController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\website;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', function () {
-    if(Auth::user()){
+    if(Auth ::user()){
     return view('admin/dashboard');
     }
     else{
