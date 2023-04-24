@@ -208,7 +208,7 @@
                                 <div class="row mb-3">
                                     <label for="about" class="col-md-4 col-lg-3 col-form-label">Documents / Proofs</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input multiple type="file" name="Docx[]" class="form-control input">
+                                        <input multiple type="file" name="Docx" class="form-control input">
                                         <span class="text-danger">@error('Docx'){{$message}}@enderror</span>
                                     </div>
                                 </div>

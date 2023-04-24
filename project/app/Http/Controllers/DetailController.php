@@ -98,7 +98,8 @@ class DetailController extends Controller
                 $create->UpdatedBy = Auth::user()->name;
                 $create->save();
         }
-        else{
+        else
+        {
             $create  = new detail();
             $create->CaseNo = $request->CaseNo;
             $create->LId = Auth::user()->lawyerid;

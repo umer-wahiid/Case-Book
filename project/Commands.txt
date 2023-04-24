@@ -6,3 +6,11 @@ Command To Install Laravel:
 
 Link To Download Composer:
 	--https://getcomposer.org/download/
+
+
+
+php artisan make migration
+
+php artisan make:controller website -mcr
+
+php artisan migrate:refresh
