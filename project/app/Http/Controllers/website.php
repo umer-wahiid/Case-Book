@@ -56,7 +56,7 @@ class website extends Controller
         {
             $show = DB::table('caseregs')
             ->where('CaseId',$CaseId)
-            ->select('caseregs.id','caseregs.CaseId','caseregs.PEmail')
+            ->select('caseregs.id','caseregs.CaseId','caseregs.DOB','caseregs.District','caseregs.CourtType','caseregs.PName','caseregs.OName','caseregs.Matter','caseregs.PEmail')
             ->get();
             $detail = DB::table('details')
             ->where('CaseNo',$CaseId)
