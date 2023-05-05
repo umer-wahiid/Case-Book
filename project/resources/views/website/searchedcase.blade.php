@@ -330,7 +330,8 @@
                     <div class="col-lg-9 col-md-8">{{$item->PEmail}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Registeration Date :</div>
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Registeration Date :
+                    </div>
                     <div class="col-lg-9 col-md-8">{{$item->DOB}}</div>
                 </div>
                 <div class="row">
@@ -346,7 +347,8 @@
                     <div class="col-lg-9 col-md-8">{{$item->PName}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Opposition Name :</div>
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Opposition Name :
+                    </div>
                     <div class="col-lg-9 col-md-8">{{$item->OName}}</div>
                 </div>
                 <div class="row">
@@ -355,8 +357,58 @@
                 </div>
                 @endforeach
             </div>
-            @foreach($detail as $item)
-            <p class="text-center small">{{$item->Details}}</p>
+
+            @foreach($detail as $key=>$item)
+            <div class="mt-3 p-4 rounded" style="border: 2px solid black;border-style:dotted">
+                <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Date {{++$key}}:</h2>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label " style="font-size: large;font-weight:650">Lawyer :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->LName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Date :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->DOC}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Court :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->Court}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Details :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->Details}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Status :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->Status}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">FIR No :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->FNo}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Next Date :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->ND}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Remarks :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->Remarks}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Case Given To :</div>
+                    <div class="col-lg-9 col-md-8">{{$item->ALId}}</div>
+                </div>
+                @php
+                $image = DB::table('details')->where('id', $item->id)->first();
+                $images = explode('|', $image->Docx);
+                @endphp
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 label" style="font-size: large;font-weight:650">Documents :</div>
+                    @foreach($images as $key=>$items)
+                    <div class="col-lg-3 col-md-4"><a href="{{URL::to($items)}}" download><i
+                                class="fa fa-download"></i>Proof {{++$key}}</a></div>
+                    @endforeach
+                </div>
+            </div>
             @endforeach
         </section>
     </main>
