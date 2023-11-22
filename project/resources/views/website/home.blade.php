@@ -231,7 +231,7 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-lg-between">
 
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">Case Book<span>.</span></a></h1>
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">Welfare Of Lawyers<span>.</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{asset('website/assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
 
@@ -275,7 +275,7 @@
 
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-xl-6 col-lg-8">
-                    <h1>Bhutta Law Associates<span>.</span></h1>
+                    <h1>Welfare of lawyers forum<span>.</span></h1>
                 </div>
             </div>
 
