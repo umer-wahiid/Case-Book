@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2023 at 11:12 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Nov 22, 2023 at 12:08 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `caseregs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `CaseId` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CaseId` varchar(255) NOT NULL,
   `DOB` date NOT NULL,
-  `year` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `District` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `CourtType` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `PName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `PEmail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `OName` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Matter` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` varchar(4) NOT NULL,
+  `District` varchar(255) NOT NULL,
+  `CourtType` varchar(255) NOT NULL,
+  `PName` varchar(255) NOT NULL,
+  `PEmail` varchar(255) NOT NULL,
+  `OName` varchar(255) DEFAULT NULL,
+  `Matter` varchar(1000) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -47,7 +47,8 @@ CREATE TABLE `caseregs` (
 --
 
 INSERT INTO `caseregs` (`id`, `CaseId`, `DOB`, `year`, `District`, `CourtType`, `PName`, `PEmail`, `OName`, `Matter`, `created_at`, `updated_at`) VALUES
-(2, 'ABC45432161', '2023-04-11', '2020', 'Naushahro Feroze', 'Income Tax Appellate Tribunal(Inland Revenue)', 'Shaharyar Khan', 'shary@gmail.com', 'umer', 'asdasda', '2023-04-10 05:00:31', '2023-04-10 05:00:31');
+(2, 'ABC45432161', '2023-04-11', '2020', 'Naushahro Feroze', 'Income Tax Appellate Tribunal(Inland Revenue)', 'Shaharyar Khan', 'shary@gmail.com', 'umer', 'asdasda', '2023-04-10 05:00:31', '2023-04-10 05:00:31'),
+(3, '6505', '2023-11-23', '2023', 'Karachi (South)', 'District Courts', 'Shaharyar Khan', 'shary@gmail.com', 'Nill', 'No record in nadra. CNIC issue', '2023-11-22 05:56:12', '2023-11-22 05:56:12');
 
 -- --------------------------------------------------------
 
@@ -69,21 +70,21 @@ CREATE TABLE `case_models` (
 
 CREATE TABLE `details` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `CaseNo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `LId` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `LName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CaseNo` varchar(255) NOT NULL,
+  `LId` varchar(255) NOT NULL,
+  `LName` varchar(255) NOT NULL,
   `DOC` date NOT NULL,
-  `Court` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Court` varchar(255) DEFAULT NULL,
   `STime` time NOT NULL,
   `ETime` time NOT NULL,
-  `Details` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Details` varchar(1000) NOT NULL,
+  `Status` varchar(255) NOT NULL,
   `ND` date DEFAULT NULL,
-  `FNo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ALId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Remarks` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Docx` varchar(10000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `UpdatedBy` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FNo` varchar(255) DEFAULT NULL,
+  `ALId` varchar(255) DEFAULT NULL,
+  `Remarks` varchar(1000) DEFAULT NULL,
+  `Docx` varchar(10000) DEFAULT NULL,
+  `UpdatedBy` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -109,11 +110,11 @@ INSERT INTO `details` (`id`, `CaseNo`, `LId`, `LName`, `DOC`, `Court`, `STime`, 
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -125,7 +126,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -150,8 +151,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -163,11 +164,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -181,18 +182,18 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `lawyerid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lawyerid` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `fname` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
   `phone` bigint(20) NOT NULL,
-  `address` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profile` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `post` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `profile` varchar(1000) DEFAULT NULL,
+  `post` varchar(255) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `role` int(11) NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -203,10 +204,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `lawyerid`, `name`, `fname`, `email`, `phone`, `address`, `profile`, `post`, `email_verified_at`, `role`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'DB16321', 'imran', 'ahmed', 'imran@gmail.com', 1234894, 'asdf wrtfd wt w ghftyf fhgf ghjkh', 'admin/assets/img/profiles\\phpD314.tmp', 'Lawyer', NULL, 1, '$2y$10$B61u.cr0Iw9rSP5z6Fb8Xe85rAM/1THUMY4QW/pL9njj1F9T8hZ9i', NULL, '2023-02-13 06:17:33', '2023-02-16 05:25:09'),
-(3, 'hg453423', 'Umer', 'Abdul Wahid', 'umer@gmail.com', 121657212, 'asdaiusd asdas', 'admin/assets/img/profiles\\php15F9.tmp', 'Judge', NULL, 2, '$2y$10$2/Ruk3fTLG4oSQgxc.N3.uIxOUFEP08ejPR8j7NcsmbU3eV2qq0tO', NULL, '2023-02-15 06:56:45', '2023-02-28 08:16:14'),
+(3, 'hg453423', 'Umer', 'Abdul Wahid', 'umer@gmail.com', 121657212, 'asdaiusd asdas', 'admin/assets/img/profiles\\php15F9.tmp', 'Judge', NULL, 2, 'umer6505', NULL, '2023-02-15 06:56:45', '2023-02-28 08:16:14'),
 (4, 'ARY321654', 'Ammar', 'Ahmed', 'ammar@gmail.com', 12348546, 'asduh duda sdiyqwoh s', 'admin/assets/img/profiles\\php363A.tmp', 'Lawyer', NULL, 1, '$2y$10$s7mDdVIcPRZDwWyFFcgRS.en4xevQ1b4RdBxgSVAmuH8llFVZKmK2', NULL, '2023-02-28 08:34:10', '2023-02-28 08:34:10'),
 (6, 'dasgd1312', 'khalid', 'ahmed', 'khalid@gmail.com', 45612345612, 'dgh f uvyg jtyg', 'admin/assets/img/profiles\\phpCDBA.tmp', 'Lawyer', NULL, 1, '$2y$10$KHfo/WWnGeUsrHyCx0hLVOBN7UT9Wj2IHttlKfxyxCKQksQ9jn89K', NULL, '2023-03-10 04:56:08', '2023-03-10 04:56:08'),
-(7, '564vh', 'shary', 'Abdul Majid', 'shary@gmail.com', 12345678912, 'yrdg gjhg ytibn', 'admin/assets/img/profiles\\php1270.tmp', 'Lawyer', NULL, 1, '$2y$10$VgHncPJGL99rs.CwSWHQeuWwAC6gxIoIkGPwLZZtL7SyrZosHTo4C', NULL, '2023-03-10 04:57:31', '2023-03-10 04:57:31');
+(7, '564vh', 'shary', 'Abdul Majid', 'shary@gmail.com', 12345678912, 'yrdg gjhg ytibn', 'admin/assets/img/profiles\\php1270.tmp', 'Lawyer', NULL, 1, '$2y$10$VgHncPJGL99rs.CwSWHQeuWwAC6gxIoIkGPwLZZtL7SyrZosHTo4C', NULL, '2023-03-10 04:57:31', '2023-03-10 04:57:31'),
+(8, '1258', 'Umer', 'Abdul Wahid', 'admin@gmail.com', 3151113099, 'ABCD, XYZ Street', 'admin/assets/img/profiles\\php6307.tmp', 'Judge', NULL, 2, '$2y$10$gEWorEoh/oUr6/Gfr0.va.PNSYjcmdtPikRkLif2n8B1wRJRAVcNe', NULL, '2023-11-22 05:35:49', '2023-11-22 05:35:49'),
+(10, '5654', 'Ashar', 'Sadiq', 'ashar@gmail.com', 3654653099, 'sdfasdfasdfasdfasdfasdf', 'admin/assets/img/profiles\\phpEB0E.tmp', 'lawyer', NULL, 1, '$2y$10$TIVbtypWHrAFXBNe90Wne.o4c.8xQaN8fQDCmtIsKAZ5FaIIC9Uem', NULL, '2023-11-22 05:41:51', '2023-11-22 05:41:51');
 
 -- --------------------------------------------------------
 
@@ -292,7 +295,7 @@ ALTER TABLE `user_models`
 -- AUTO_INCREMENT for table `caseregs`
 --
 ALTER TABLE `caseregs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `case_models`
@@ -328,7 +331,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_models`
